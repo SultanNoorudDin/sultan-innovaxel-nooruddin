@@ -1,6 +1,5 @@
-from rest_framework import status, generics
+from rest_framework import generics
 from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
 from .models import ShortURL
 from .serializers import ShortURLSerializer
 
@@ -28,3 +27,8 @@ class UpdateShortURL(generics.UpdateAPIView):
 class DeleteShortURL(generics.DestroyAPIView):
     lookup_field = 'shortCode'
     queryset = ShortURL.objects.all()
+
+class GetStatsView(generics.RetrieveAPIView):
+    lookup_field = 'shortCode'
+    queryset = ShortURL.objects.all()
+    serializer_class = ShortURLSerializer
