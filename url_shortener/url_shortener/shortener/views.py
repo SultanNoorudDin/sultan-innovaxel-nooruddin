@@ -19,3 +19,8 @@ class RetrieveShortURL(generics.RetrieveAPIView):
         instance.save()
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
+    
+class UpdateShortURL(generics.UpdateAPIView):
+    lookup_field = 'shortCode'
+    queryset = ShortURL.objects.all()
+    serializer_class = ShortURLSerializer
