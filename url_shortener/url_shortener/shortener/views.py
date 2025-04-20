@@ -24,3 +24,7 @@ class UpdateShortURL(generics.UpdateAPIView):
     lookup_field = 'shortCode'
     queryset = ShortURL.objects.all()
     serializer_class = ShortURLSerializer
+
+class DeleteShortURL(generics.DestroyAPIView):
+    lookup_field = 'shortCode'
+    queryset = ShortURL.objects.all()
