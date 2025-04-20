@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('shorten/', views.CreateShortURL.as_view(), name='create'),
-
+    path('shorten/<str:shortCode>/', views.RetrieveShortURL.as_view(), name='retrieve'),
 ]
