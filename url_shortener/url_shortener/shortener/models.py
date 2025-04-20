@@ -3,6 +3,7 @@ import random
 from django.db import models
 from django.utils.timezone import now
 
+# randomizer shortener
 def generate_shortcode():
     return ''.join(random.choices(string.ascii_letters + string.digits, k=6))
 
